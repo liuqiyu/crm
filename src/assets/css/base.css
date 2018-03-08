@@ -1,0 +1,8 @@
+/** 导航栏 **/
+.el-menu-item, .el-submenu__title {
+  background: #f0f5f8 !important;
+}
+
+.el-menu {
+  border-right: none !important;
+}

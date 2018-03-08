@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>crm</title>
+    <style>
+      /** loading **/
+      #preloader {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        background: #fff;
+        top: 0;
+        left: 0;
+        z-index: 2333;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+      }
+
+      #preloader .loader {
+        text-align: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+      }
+
+      .loding-label {
+        width: 180px;
+        font-size: 28px;
+        font-weight: bold;
+        font-family: '幼圆';
+        letter-spacing: 2px;
+        color: #FF6078;
+        opacity: 0.9;
+      }
+
+      .loding-label > img {
+        width: 100%;
+      }
+
+      .loader__indicator {
+        display: block;
+        width: 80px;
+        height: 80px;
+        position: relative;
+      }
+
+      .loader__indicator::before {
+        content: '';
+        width: 80px;
+        height: 80px;
+        display: inline-block;
+        position: absolute;
+        border-radius: 50%;
+        background-color: #269af1;
+        opacity: 0;
+        left: 0;
+        top: 0;
+        -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+        transform: scale(0);
+        -webkit-animation-name: preloading;
+        animation-name: preloading;
+        -webkit-animation-duration: 1.2s;
+        animation-duration: 1.2s;
+        -webkit-animation-delay: 0s;
+        animation-delay: 0s;
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+      }
+
+      .loader__indicator::after {
+        content: '';
+        width: 80px;
+        height: 80px;
+        display: inline-block;
+        position: absolute;
+        border-radius: 50%;
+        background-color: #269af1;
+        opacity: 0;
+        left: 0;
+        top: 0;
+        -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+        transform: scale(0);
+        -webkit-animation-name: preloading;
+        animation-name: preloading;
+        -webkit-animation-duration: 1.2s;
+        animation-duration: 1.2s;
+        -webkit-animation-delay: -0.6s;
+        animation-delay: -0.6s;
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+      }
+
+      @-webkit-keyframes preloading {
+        0% {
+          opacity: 1;
+          -webkit-transform: scale(0);
+          transform: scale(0); }
+        100% {
+          opacity: 0;
+          -webkit-transform: scale(1);
+          transform: scale(1); } }
+
+      @keyframes preloading {
+        0% {
+          opacity: 1;
+          -webkit-transform: scale(0);
+          transform: scale(0); }
+        100% {
+          opacity: 0;
+          -webkit-transform: scale(1);
+          transform: scale(1); }
+      }
+    </style>
+  </head>
+  <body style="position: relative">
+    <div id="preloader">
+      <div class="loader">
+        <span class="loader__indicator"></span>
+        <div class="loding-label">
+          Customer
+        </div>
+      </div>
+    </div>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>

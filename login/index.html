@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="css/login.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+  <div id="root">
+    <div class="bg">
+      <img src="../src/assets/images/login-bg.png" alt="">
+    </div>
+    <div class="enter">Enter</div>
+  </div>
+  <script>
+    $(function() {
+      $('.enter').on('click', function() {
+        var url = location.search.slice(location.search.indexOf('=') + 1, location.search.length)
+        location.href = url
+      })
+    })
+  </script>
+</body>
+</html>
