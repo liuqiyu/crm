@@ -34,6 +34,12 @@ export default {
       timer: null,
     };
   },
+  watch: {
+    '$route'() {
+      height();
+      this.setTableHeight(['.i-topbar', '.copyright', '.breadcrumb', '.i-search', '.i-pagination']);
+    },
+  },
   mounted() {
     height();
     this.setTableHeight(['.i-topbar', '.copyright', '.breadcrumb', '.i-search', '.i-pagination']);
