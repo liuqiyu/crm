@@ -2,19 +2,22 @@
   <div class="i-navbar">
     <div class="i-nav-box">
       <el-menu
-        default-active="2"
+        :router="true"
+        :default-active="this.$store.state.navDefaultIndex"
         class="el-menu-vertical-demo">
         <template v-for="(item, index) in list">
-          <el-submenu index="1" v-if="item.hasChild" :key="index">
+          <el-submenu :index="item.index" v-if="item.hasChild" :key="index">
             <template slot="title">
               <i class="el-icon-location"></i>
               <span>{{item.label}}</span>
             </template>
-            <el-menu-item index="1-3" v-for="(row, key) in item.children" :key="key">
+            <el-menu-item :index="row.index" :route="row.path"
+                          v-for="(row, key) in item.children" :key="key">
               {{row.label}}
             </el-menu-item>
           </el-submenu>
-          <el-menu-item index="2" v-else :key="index">
+          <!-- 无子集 -->
+          <el-menu-item class="a" :index="item.index" v-else :key="index" :route="item.path">
             <i class="el-icon-menu"></i>
             <span slot="title">{{item.label}}</span>
           </el-menu-item>
@@ -31,25 +34,21 @@ export default {
       list: [
         {
           label: '概览',
-          path: '/overview',
+          path: {
+            path: '/overview',
+          },
           icon: '',
           hasChild: false,
           index: '1',
         },
         {
           label: '客户',
+          path: {
+            path: '/customer',
+          },
           icon: '',
-          hasChild: true,
+          hasChild: false,
           index: '2',
-          children: [
-            {
-              label: '客户1',
-              path: '/customer1',
-              icon: '',
-              hasChild: false,
-              index: '2-1',
-            },
-          ],
         },
       ],
     };
@@ -59,10 +58,11 @@ export default {
 
 <style scoped>
   .i-navbar {
-    position: absolute;
-    left: 0;
     width: 200px;
-    height: 100%;
     background: #f0f5f8;
+    border-right: 1px solid #eee;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
   }
 </style>

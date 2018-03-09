@@ -8,43 +8,44 @@
         <div class="i-c-box">
           <router-view></router-view>
         </div>
+        <copyright></copyright>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 import topbar from './../../components/topbar';
 import navbar from './../../components/navbar';
 import breadcrumb from './../../components/breadcrumb';
+import copyright from './../../components/copyright';
 import height from './../../utils/height';
-
-window.onresize = () => {
-  height();
-};
 
 export default {
   components: {
     topbar,
     navbar,
     breadcrumb,
-  },
-  mounted() {
-    this.timer = setTimeout(() => {
-      document.getElementById('preloader').style.display = 'none';
-    }, 500);
+    copyright,
   },
   data() {
     return {
       timer: null,
     };
   },
-  beforeRouteEnter(to, from, next) {
+  mounted() {
     height();
-    next();
+    this.setTableHeight(['.i-topbar', '.copyright', '.breadcrumb', '.i-search', '.i-pagination']);
+    window.onresize = () => {
+      height();
+      this.setTableHeight(['.i-topbar', '.copyright', '.breadcrumb', '.i-search', '.i-pagination']);
+    };
   },
-  beforeDestroy() {
-    clearTimeout(this.timer);
+  methods: {
+    ...mapActions([
+      'setTableHeight',
+    ]),
   },
 };
 </script>
@@ -52,22 +53,32 @@ export default {
 <style scoped>
   .i-layout {
     position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    overflow: hidden;
   }
 
   .i-main {
-    padding-left: 200px;
     position: relative;
+    flex: 1 1 auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: row;
   }
 
   .i-content {
-    height: 100%;
     width: 100%;
-    padding: 20px 0 20px 20px;
+    padding: 10px 20px 0 20px;
+    position: relative;
   }
 
   .i-c-box {
     width: 100%;
     height: 100%;
     overflow-y: auto;
+    position: relative;
   }
 </style>

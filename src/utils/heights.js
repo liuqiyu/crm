@@ -1,0 +1,27 @@
+/**
+ * heights
+ * create by lqy 2018/3/9
+ */
+
+const heights = (dom) => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      let h = 0;
+      dom.forEach((value) => {
+        try{
+          const $el = document.querySelector(value);
+          if ($el !== null) {
+            h += $el.offsetHeight;
+            console.log($el.offsetHeight)
+          }
+        } catch(e) {
+          h += 0;
+        }
+      });
+      console.log(window.innerHeight)
+      resolve(window.innerHeight - h - 20 - 10);
+    })
+  });
+};
+
+export default heights;

@@ -6,3 +6,21 @@
 .el-menu {
   border-right: none !important;
 }
+
+.el-table td, .el-table th {
+  padding: 6px 0 !important;
+}
+
+.el-table th {
+  background: #f0f5f8;
+}
+
+.el-table th>.cell {
+  color: #666;
+}
+
+.el-table .cell {
+  font-size: 12px !important;
+}
+
+
