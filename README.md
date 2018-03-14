@@ -1,21 +1,18 @@
-# crm
+# crm系统
 
-> customer relationship management
+### 介绍
 
-## Build Setup
+一个简单的系统
 
-``` bash
-# install dependencies
-npm install
+### 技术栈
 
-# serve with hot reload at localhost:8080
-npm run dev
+* vue2.0
+* vue-router
+* vuex
+* element-ui
+* es6
+* eslint for `airbnb`
 
-# build for production with minification
-npm run build
+### 内容
 
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+[预览地址](https://liuqiyu.github.io/crm/dist/#/login)
