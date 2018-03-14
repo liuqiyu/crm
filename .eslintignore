@@ -4,3 +4,4 @@
 /*.js
 /src/router/*
 /src/utils/*
+/src/views/layout/*.vue

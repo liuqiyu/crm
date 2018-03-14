@@ -12,12 +12,10 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'layout',
       component: Layout,
       children: [
         {
           path: '',
-          name: 'overview',
           component: Overview,
         },
         {

@@ -6,7 +6,7 @@ const mainHieght = () => {
     const top = document.querySelector('.i-topbar');
     const main = document.querySelector('.i-main');
     const bodyHeight = document.documentElement.clientHeight;
-    // main.style.height = `${bodyHeight - top.clientHeight}px`;
+    main.style.height = `${bodyHeight - top.clientHeight}px`;
     
     // 计算 i-c-box 高度
     

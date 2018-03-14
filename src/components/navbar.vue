@@ -8,7 +8,7 @@
         <template v-for="(item, index) in list">
           <el-submenu :index="item.index" v-if="item.hasChild" :key="index">
             <template slot="title">
-              <i class="el-icon-location"></i>
+              <i :class="item.icon"></i>
               <span>{{item.label}}</span>
             </template>
             <el-menu-item :index="row.index" :route="row.path"
@@ -18,7 +18,7 @@
           </el-submenu>
           <!-- 无子集 -->
           <el-menu-item class="a" :index="item.index" v-else :key="index" :route="item.path">
-            <i class="el-icon-menu"></i>
+            <i :class="item.icon"></i>
             <span slot="title">{{item.label}}</span>
           </el-menu-item>
         </template>
@@ -37,7 +37,7 @@ export default {
           path: {
             path: '/overview',
           },
-          icon: '',
+          icon: 'iconfont icon-zichangailan',
           hasChild: false,
           index: '1',
         },
@@ -46,7 +46,7 @@ export default {
           path: {
             path: '/customer',
           },
-          icon: '',
+          icon: 'iconfont icon-kehu',
           hasChild: false,
           index: '2',
         },
@@ -59,10 +59,14 @@ export default {
 <style scoped>
   .i-navbar {
     width: 200px;
+    height: 100%;
     background: #f0f5f8;
     border-right: 1px solid #eee;
-    flex: 0 0 auto;
-    display: flex;
-    flex-direction: column;
+    /*flex: 0 0 auto;*/
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 </style>

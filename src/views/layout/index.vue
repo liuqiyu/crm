@@ -73,6 +73,7 @@ export default {
     overflow-x: hidden;
     display: flex;
     flex-direction: row;
+    padding-left: 200px;
   }
 
   .i-content {

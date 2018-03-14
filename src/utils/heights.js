@@ -12,13 +12,11 @@ const heights = (dom) => {
           const $el = document.querySelector(value);
           if ($el !== null) {
             h += $el.offsetHeight;
-            console.log($el.offsetHeight)
           }
         } catch(e) {
           h += 0;
         }
       });
-      console.log(window.innerHeight)
       resolve(window.innerHeight - h - 20 - 10);
     })
   });
