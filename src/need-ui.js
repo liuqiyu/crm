@@ -15,6 +15,9 @@ import {
   Button,
   Row,
   Col,
+  Input,
+  Select,
+  Option,
 } from 'element-ui';
 
 Vue.use(Menu);
@@ -28,3 +31,6 @@ Vue.use(Pagination);
 Vue.use(Button);
 Vue.use(Row);
 Vue.use(Col);
+Vue.use(Input);
+Vue.use(Select);
+Vue.use(Option);

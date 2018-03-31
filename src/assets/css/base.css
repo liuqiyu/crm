@@ -1,4 +1,6 @@
-/** 导航栏 **/
+/**
+ 导航栏
+ */
 .el-menu-item, .el-submenu__title {
   background: #f0f5f8 !important;
 }
@@ -21,6 +23,14 @@
 
 .el-table .cell {
   font-size: 12px !important;
+}
+
+
+/**
+  搜索框
+ */
+.search-form .el-select {
+  width: 100% !important;
 }
 
 
